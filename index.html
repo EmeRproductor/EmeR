@@ -1,104 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>EmeR Producciones</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>EmeR Producciones</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- FUENTES ELEGANTES -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-  body {
+
+<style>
+body {
   margin: 0;
   font-family: 'Montserrat', Arial, sans-serif;
   background: #0b0b0b;
   color: white;
   text-align: center;
 }
-    }
+
+/* HEADER CON IMAGEN */
 header {
+  min-height: 70vh;
   background-image: url("fondo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 120px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-} header::before {
+}
+
+/* CAPA OSCURA */
+header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-}header * {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* CONTENIDO */
+.header-content {
   position: relative;
   z-index: 2;
+  padding: 40px 20px;
 }
-    h1 {
+
+h1 {
   font-family: 'Playfair Display', serif;
   font-size: 44px;
-  margin-bottom: 10px;
   letter-spacing: 2px;
-}h2 {
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 1px;
-};
-    }
+  margin-bottom: 10px;
+}
 
-    p {
-      font-size: 18px;
-      opacity: 0.85;
-    }
+p {
+  font-size: 18px;
+  opacity: 0.9;
+}
 
-    section {
-      padding: 80px 20px;
-    }
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 36px;
+  border: 2px solid white;
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
 
-    .servicios p {
-      margin: 8px 0;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 36px;
-      border: 2px solid white;
-      border-radius: 50px;
-      color: white;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: white;
-      color: black;
-    }
-
-    footer {
-      padding: 30px;
-      font-size: 14px;
-      opacity: 0.6;
-    }
-  </style>
+.btn:hover {
+  background: white;
+  color: black;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
+<header>
+  <div class="header-content">
     <h1>EmeR Producciones</h1>
     <p>Diseño gráfico · Flyers · Videos publicitarios · Producción digital</p>
-    <a class="btn" href="https://wa.me/56982328639" target="_blank">
+    <a class="btn" href="https://wa.me/56982328369" target="_blank">
       Contactar por WhatsApp
     </a>
-  </header>
-
-  <section class="servicios">
-    <h2>Servicios</h2>
-    <p>🎨 Diseño de flyers</p>
-    <p>🎬 Videos publicitarios</p>
-    <p>📢 Publicidad digital</p>
-    <p>📸 Producción audiovisual</p>
-  </section>
-
-  <footer>
-    © 2026 EmeR Producciones
-  </footer>
+  </div>
+</header>
 
 </body>
 </html>
