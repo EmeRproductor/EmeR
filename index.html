@@ -6,187 +6,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-  <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>EmeR Producciones</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b0b0b;
+      color: white;
+      text-align: center;
+    }
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0b0b0b;
-  color: white;
-  text-align: center;
-}
-
-header {
-  background-image: url("fondo.png");
-  background-size: cover;
-  background-position: center;
-  padding: 120px 20px;
-  position: relative;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-}
-
-header * {
-  position: relative;
-  z-index: 2;
-}
-
-h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 18px;
-}
-
-/* CONTACTO */
-.contacto {
-  padding: 80px 20px;
-  animation: aparecer 1.5s ease;
-}
-
-.btn-contacto {
-  display: inline-block;
-  padding: 14px 36px;
-  border: 2px solid white;
-  border-radius: 50px;
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn-contacto:hover {
-  background: white;
-  color: black;
-}
-
-@keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <h1>EmeR Producciones</h1>
-  <p>Flyers · Videos · Publicidad Digital</p>
-</header>
-
-<section class="contacto">
-  <h2>Contacto</h2>
-  <p>Hablemos de tu proyecto</p>
-  <a class="btn-contacto" href="https://wa.me/56912345678" target="_blank">
-    Contactar por WhatsApp
-  </a>
-</section>
-
-</body>
-</html>
-</section>  
-      background-image: url("fondo.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+    header {
+      background: linear-gradient(135deg, #000000, #1a1a1a);
       padding: 120px 20px;
-      position: relative;
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-    }
-
-    header * {
-      position: relative;
-      z-index: 2;
     }
 
     h1 {
       font-size: 42px;
-      letter-spacing: 2px;
       margin-bottom: 10px;
+      letter-spacing: 2px;
     }
 
     p {
       font-size: 18px;
+      opacity: 0.85;
+    }
+
+    section {
+      padding: 80px 20px;
+    }
+
+    .servicios p {
+      margin: 8px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 36px;
+      border: 2px solid white;
+      border-radius: 50px;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: white;
+      color: black;
+    }
+
+    footer {
+      padding: 30px;
+      font-size: 14px;
+      opacity: 0.6;
     }
   </style>
-  {
-  padding: 80px 20px;
-  background: #0b0b0b;
-  text-align: center;
-  animation: fadeUp 1.5s ease;
-}
-
-.contacto h2 {
-  font-size: 34px;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-}
-
-.contacto p {
-  font-size: 18px;
-  opacity: 0.8;
-  margin-bottom: 30px;
-}
-
-.btn-contacto {
-  display: inline-block;
-  padding: 14px 36px;
-  border: 2px solid white;
-  border-radius: 50px;
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-}
-
-.btn-contacto:hover {
-  background: white;
-  color: #0b0b0b;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 </head>
 
 <body>
 
   <header>
     <h1>EmeR Producciones</h1>
-    <p>Diseño gráfico · Flyers · Videos publicitarios · Producción</p>
+    <p>Diseño gráfico · Flyers · Videos publicitarios · Producción digital</p>
+    <a class="btn" href="https://wa.me/56912345678" target="_blank">
+      Contactar por WhatsApp
+    </a>
   </header>
+
+  <section class="servicios">
+    <h2>Servicios</h2>
+    <p>🎨 Diseño de flyers</p>
+    <p>🎬 Videos publicitarios</p>
+    <p>📢 Publicidad digital</p>
+    <p>📸 Producción audiovisual</p>
+  </section>
+
+  <footer>
+    © 2026 EmeR Producciones
+  </footer>
 
 </body>
 </html>
