@@ -5,7 +5,7 @@
 <title>EmeR Producciones</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- FUENTES ELEGANTES -->
+<!-- Fuentes elegantes -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
@@ -17,28 +17,25 @@ body {
   text-align: center;
 }
 
-/* HEADER CON IMAGEN */
+/* HEADER */
 header {
-  min-height: 70vh;
+  min-height: 80vh;
   background-image: url("fondo.png");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
-/* CAPA OSCURA */
 header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.6);
 }
 
-/* CONTENIDO */
 .header-content {
   position: relative;
   z-index: 2;
@@ -57,6 +54,7 @@ p {
   opacity: 0.9;
 }
 
+/* BOTÓN */
 .btn {
   display: inline-block;
   margin-top: 30px;
@@ -72,6 +70,29 @@ p {
   background: white;
   color: black;
 }
+
+/* SECCIONES */
+section {
+  padding: 80px 20px;
+}
+
+.servicios {
+  background: #0b0b0b;
+}
+
+.contacto {
+  background: #111;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.servicios p {
+  margin: 10px 0;
+}
 </style>
 </head>
 
@@ -81,11 +102,27 @@ p {
   <div class="header-content">
     <h1>EmeR Producciones</h1>
     <p>Diseño gráfico · Flyers · Videos publicitarios · Producción digital</p>
-    <a class="btn" href="https://wa.me/56982328639" target="_blank">
+    <a class="btn" href="https://wa.me/56912345678" target="_blank">
       Contactar por WhatsApp
     </a>
   </div>
 </header>
+
+<section class="servicios">
+  <h2>Servicios</h2>
+  <p>🎨 Diseño de flyers y material gráfico</p>
+  <p>🎬 Videos publicitarios</p>
+  <p>📢 Publicidad digital</p>
+  <p>📸 Producción audiovisual para eventos</p>
+</section>
+
+<section class="contacto">
+  <h2>Contacto</h2>
+  <p>Hablemos de tu proyecto</p>
+  <a class="btn" href="https://wa.me/56982328639" target="_blank">
+    Escríbenos por WhatsApp
+  </a>
+</section>
 
 </body>
 </html>
