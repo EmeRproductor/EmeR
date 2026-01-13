@@ -5,7 +5,6 @@
 <title>EmeR Producciones</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Fuentes elegantes -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
@@ -42,11 +41,18 @@ header::before {
   padding: 40px 20px;
 }
 
+/* TEXTOS */
 h1 {
   font-family: 'Playfair Display', serif;
   font-size: 44px;
   letter-spacing: 2px;
   margin-bottom: 10px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
 p {
@@ -64,52 +70,13 @@ p {
   color: white;
   text-decoration: none;
   transition: 0.3s;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn:hover {
   background: white;
   color: black;
-}
-
-/* SECCIONES */
-section {
-  padding: 80px 20px;
-}
-
-.servicios {
-  background: #0b0b0b;
-}
-
-.contacto {
-  background: #111;
-}
-
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-.servicios p {
-  margin: 10px 0;
-}
-</style>
-  /* ANIMACIONES MARKETING */
-.fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 1s ease;
-}
-
-.fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* BOTÓN PRO */
-.btn {
-  position: relative;
-  overflow: hidden;
 }
 
 .btn::after {
@@ -126,12 +93,42 @@ h2 {
 .btn:hover::after {
   left: 100%;
 }
+
+/* SECCIONES */
+section {
+  padding: 80px 20px;
+}
+
+.servicios {
+  background: #0b0b0b;
+}
+
+.contacto {
+  background: #111;
+}
+
+.servicios p {
+  margin: 10px 0;
+}
+
+/* ANIMACIONES MARKETING */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="header-content">
+  <div class="header-content fade-up">
     <h1>EmeR Producciones</h1>
     <p>Diseño gráfico · Flyers · Videos publicitarios · Producción digital</p>
     <a class="btn" href="https://wa.me/56912345678" target="_blank">
@@ -140,7 +137,7 @@ h2 {
   </div>
 </header>
 
-<section class="servicios">
+<section class="servicios fade-up">
   <h2>Servicios</h2>
   <p>🎨 Diseño de flyers y material gráfico</p>
   <p>🎬 Videos publicitarios</p>
@@ -148,13 +145,30 @@ h2 {
   <p>📸 Producción audiovisual para eventos</p>
 </section>
 
-<section class="contacto">
+<section class="contacto fade-up">
   <h2>Contacto</h2>
   <p>Hablemos de tu proyecto</p>
-  <a class="btn" href="https://wa.me/56982328639" target="_blank">
+  <a class="btn" href="https://wa.me/56912345678" target="_blank">
     Escríbenos por WhatsApp
   </a>
 </section>
+
+<script>
+const elements = document.querySelectorAll('.fade-up');
+
+const showOnScroll = () => {
+  const triggerBottom = window.innerHeight * 0.85;
+  elements.forEach(el => {
+    const boxTop = el.getBoundingClientRect().top;
+    if (boxTop < triggerBottom) {
+      el.classList.add('show');
+    }
+  });
+};
+
+window.addEventListener('scroll', showOnScroll);
+window.addEventListener('load', showOnScroll);
+</script>
 
 </body>
 </html>
