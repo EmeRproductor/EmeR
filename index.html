@@ -17,24 +17,32 @@ body{
   overflow-x:hidden;
 }
 
-/* ===== FONDO TECNOLÓGICO ANIMADO ===== */
-.bg-elite{
-  position:relative;
-  min-height:100vh;
+/* ===== VIDEO FONDO ===== */
+.video-bg{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
   background:
-    radial-gradient(circle at 20% 20%, rgba(0,255,255,.25), transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(255,0,150,.25), transparent 40%),
-    linear-gradient(120deg,#02040a,#050b1f,#02040a);
-  animation:bgMove 12s infinite alternate;
+    linear-gradient(135deg,
+      rgba(0,255,255,.25),
+      rgba(0,0,0,.85),
+      rgba(255,0,150,.25)
+    );
+  z-index:-1;
 }
 
-@keyframes bgMove{
-  0%{background-position:0% 0%}
-  100%{background-position:100% 100%}
-}
-
-/* ===== HERO ===== */
+/* HERO */
 header{
+  min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -57,7 +65,7 @@ h1{
 .hero p{
   margin-top:25px;
   font-size:20px;
-  opacity:.9;
+  opacity:.95;
 }
 
 /* BOTÓN */
@@ -78,10 +86,11 @@ h1{
   color:#000;
 }
 
-/* ===== SECCIONES ===== */
+/* SECCIONES */
 section{
   padding:110px 20px;
   text-align:center;
+  background:rgba(2,4,10,.9);
 }
 
 h2{
@@ -90,16 +99,7 @@ h2{
   margin-bottom:30px;
 }
 
-/* ===== SERVICIOS ===== */
-.servicios{
-  background:
-    linear-gradient(135deg,
-      rgba(0,255,255,.2),
-      rgba(0,0,0,.95),
-      rgba(255,0,150,.2)
-    );
-}
-
+/* SERVICIOS */
 .grid{
   max-width:1100px;
   margin:60px auto 0;
@@ -126,7 +126,7 @@ h2{
   margin-bottom:15px;
 }
 
-/* ===== CTA FINAL ===== */
+/* CTA */
 .cta{
   background:#02040a;
 }
@@ -135,7 +135,7 @@ h2{
   font-size:22px;
 }
 
-/* ===== WHATSAPP ===== */
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   bottom:22px;
@@ -146,12 +146,12 @@ h2{
   border-radius:50px;
   text-decoration:none;
   font-weight:600;
-  box-shadow:0 0 30px rgba(37,211,102,1);
+  box-shadow:0 0 35px rgba(37,211,102,1);
   animation:pulse 2s infinite;
   z-index:999;
 }
 
-/* ===== ANIMACIONES ===== */
+/* ANIMACIONES */
 @keyframes fadeUp{
   from{opacity:0;transform:translateY(50px)}
   to{opacity:1;transform:translateY(0)}
@@ -159,11 +159,11 @@ h2{
 
 @keyframes pulse{
   0%{box-shadow:0 0 0 rgba(37,211,102,.9)}
-  70%{box-shadow:0 0 40px rgba(37,211,102,1)}
+  70%{box-shadow:0 0 45px rgba(37,211,102,1)}
   100%{box-shadow:0 0 0 rgba(37,211,102,.9)}
 }
 
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media(max-width:768px){
   h1{font-size:36px}
   h2{font-size:28px}
@@ -173,12 +173,19 @@ h2{
 
 <body>
 
-<header class="bg-elite">
+<!-- VIDEO -->
+<video class="video-bg" autoplay muted loop playsinline>
+  <source src="video.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<header>
   <div class="hero">
     <h1>EmeR Producciones</h1>
     <p>
-      Agencia digital especializada en diseño gráfico,  
-      videos publicitarios y marketing de alto impacto.
+      Diseño gráfico · Videos publicitarios ·  
+      Marketing digital de alto impacto
     </p>
     <a class="btn" href="https://wa.me/56982328639" target="_blank">
       Impulsar mi marca
@@ -186,13 +193,13 @@ h2{
   </div>
 </header>
 
-<section class="servicios">
+<section>
   <h2>Servicios Premium</h2>
 
   <div class="grid">
     <div class="card">
       <h3>Diseño Gráfico</h3>
-      <p>Flyers, branding y visuales que venden.</p>
+      <p>Flyers, branding y piezas visuales profesionales.</p>
     </div>
 
     <div class="card">
@@ -202,7 +209,7 @@ h2{
 
     <div class="card">
       <h3>Marketing Digital</h3>
-      <p>Estrategias pensadas para crecer rápido.</p>
+      <p>Estrategias para crecer rápido y vender más.</p>
     </div>
 
     <div class="card">
@@ -213,8 +220,8 @@ h2{
 </section>
 
 <section class="cta">
-  <h2>¿Listo para dominar tu mercado?</h2>
-  <p>Trabajemos juntos y lleva tu negocio al siguiente nivel.</p>
+  <h2>¿Listo para destacar?</h2>
+  <p>Trabajemos juntos y llevemos tu negocio al siguiente nivel.</p>
   <a class="btn" href="https://wa.me/56982328639" target="_blank">
     Contactar ahora
   </a>
