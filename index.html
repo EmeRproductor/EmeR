@@ -11,39 +11,75 @@
 body {
   margin: 0;
   font-family: 'Montserrat', Arial, sans-serif;
-  background-color: #0b0b0b;
+  background-color: #05070c;
   color: white;
   text-align: center;
 }
 
-/* HEADER */
+/* ===== HEADER FULL PANTALLA PRO ===== */
 header {
-  min-height: 80vh;
-  background: url("fondo.png") center/cover no-repeat;
+  min-height: 100vh;
+  background: 
+    linear-gradient(
+      120deg,
+      rgba(0, 20, 40, 0.85),
+      rgba(0, 0, 0, 0.75)
+    ),
+    url("fondo.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-}
-
+/* CONTENIDO */
 .header-content {
-  position: relative;
-  z-index: 1;
   padding: 40px 20px;
+  animation: fadeIn 1.2s ease forwards;
 }
 
-/* TEXTOS */
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 42px;
+  font-size: 44px;
+  letter-spacing: 2px;
   margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+/* BOTÓN */
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 36px;
+  border: 2px solid white;
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: white;
+  color: #000;
+}
+
+/* SECCIONES */
+section {
+  padding: 80px 20px;
+}
+
+.servicios {
+  background: linear-gradient(180deg, #05070c, #0b0f1a);
+}
+
+.contacto {
+  background: linear-gradient(180deg, #0b0f1a, #05070c);
 }
 
 h2 {
@@ -52,52 +88,22 @@ h2 {
   margin-bottom: 20px;
 }
 
-p {
-  font-size: 18px;
-}
-
-/* BOTÓN */
-.btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 14px 32px;
-  border: 2px solid white;
-  border-radius: 40px;
-  color: white;
-  text-decoration: none;
-}
-
-.btn:hover {
-  background: white;
-  color: black;
-}
-
-/* SECCIONES */
-section {
-  padding: 70px 20px;
-}
-
-.servicios {
-  background-color: #0b0b0b;
-}
-
-.contacto {
-  background-color: #111;
-}
-
-/* ANIMACIÓN SIMPLE Y SEGURA */
-.fade-in {
-  animation: fadeIn 1.2s ease forwards;
-}
-
+/* ANIMACIÓN SUAVE */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(25px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 34px;
   }
 }
 </style>
@@ -106,7 +112,7 @@ section {
 <body>
 
 <header>
-  <div class="header-content fade-in">
+  <div class="header-content">
     <h1>EmeR Producciones</h1>
     <p>Diseño gráfico · Flyers · Videos publicitarios · Producción digital</p>
     <a class="btn" href="https://wa.me/56982328639" target="_blank">
@@ -115,19 +121,19 @@ section {
   </div>
 </header>
 
-<section class="servicios fade-in">
+<section class="servicios">
   <h2>Servicios</h2>
-  <p>🎨 Diseño de flyers</p>
+  <p>🎨 Diseño de flyers y material gráfico</p>
   <p>🎬 Videos publicitarios</p>
-  <p>📢 Publicidad digital</p>
+  <p>📢 Marketing y publicidad digital</p>
   <p>📸 Producción audiovisual para eventos</p>
 </section>
 
-<section class="contacto fade-in">
+<section class="contacto">
   <h2>Contacto</h2>
-  <p>Escríbenos y hagamos tu proyecto realidad</p>
+  <p>Hablemos de tu proyecto</p>
   <a class="btn" href="https://wa.me/56982328639" target="_blank">
-    WhatsApp
+    Escríbenos por WhatsApp
   </a>
 </section>
 
