@@ -2,213 +2,218 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>EmeR Producciones</title>
+<title>EmeR Producciones | Marketing & Diseño</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Montserrat', Arial, sans-serif;
-  background: #02040a;
-  color: white;
-  text-align: center;
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  color:#fff;
+  background:#02040a;
 }
 
-/* ===== FONDO AGRESIVO TECNOLÓGICO ===== */
-.tech-bg {
+/* ===== FONDO TECNOLÓGICO AGRESIVO ===== */
+.bg-tech{
   background:
     linear-gradient(135deg,
-      rgba(0,255,255,0.15),
-      rgba(0,0,0,0.9),
-      rgba(255,0,150,0.12)
+      rgba(0,255,255,.18),
+      rgba(0,0,0,.95),
+      rgba(255,0,120,.18)
     ),
-    url("fondo.png");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+    url("fondo.png") center/cover no-repeat fixed;
 }
 
 /* HERO */
-header {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+header{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
 }
 
-.hero {
-  padding: 40px 20px;
-  animation: fadeIn 1.2s ease forwards;
+.hero{
+  max-width:900px;
+  animation:fadeUp 1.3s ease;
 }
 
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+h1{
+  font-size:48px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
 }
 
-p {
-  font-size: 18px;
-  opacity: 0.95;
+.hero p{
+  font-size:20px;
+  opacity:.9;
+  margin-top:20px;
 }
 
-/* BOTÓN */
-.btn {
-  display: inline-block;
-  margin-top: 35px;
-  padding: 15px 40px;
-  border: 2px solid #00ffff;
-  border-radius: 50px;
-  color: #00ffff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+/* BOTONES */
+.btn{
+  display:inline-block;
+  margin-top:35px;
+  padding:16px 42px;
+  border-radius:50px;
+  border:2px solid #00ffff;
+  color:#00ffff;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
 }
 
-.btn:hover {
-  background: #00ffff;
-  color: #000;
+.btn:hover{
+  background:#00ffff;
+  color:#000;
 }
 
 /* SECCIONES */
-section {
-  padding: 100px 20px;
+section{
+  padding:110px 20px;
+  text-align:center;
 }
 
-.servicios {
-  background:
-    linear-gradient(135deg,
-      rgba(255,0,150,0.15),
-      rgba(0,0,0,0.95),
-      rgba(0,255,255,0.15)
-    ),
-    url("fondo.png");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-.contacto {
-  background: linear-gradient(180deg,#02040a,#050a18);
-}
-
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 34px;
-  margin-bottom: 30px;
-  letter-spacing: 2px;
+h2{
+  font-size:36px;
+  letter-spacing:2px;
+  margin-bottom:25px;
 }
 
 /* SERVICIOS */
-.servicios p {
-  font-size: 19px;
-  margin: 14px 0;
-  font-weight: 500;
+.servicios{
+  background:
+    linear-gradient(135deg,
+      rgba(255,0,120,.2),
+      rgba(0,0,0,.95),
+      rgba(0,255,255,.2)
+    ),
+    url("fondo.png") center/cover no-repeat fixed;
 }
 
-/* GALERÍA */
-.galeria {
-  background: #02040a;
+.servicios-grid{
+  max-width:1000px;
+  margin:60px auto 0;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
 }
 
-.galeria-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 22px;
-  margin-top: 50px;
+.card{
+  background:rgba(0,0,0,.55);
+  border:1px solid rgba(0,255,255,.25);
+  border-radius:18px;
+  padding:35px 25px;
+  transition:.35s;
 }
 
-.galeria-item {
-  height: 170px;
-  background: linear-gradient(135deg,#0a0f1f,#111);
-  border: 1px solid rgba(0,255,255,.2);
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  letter-spacing: 1px;
-  transition: 0.35s;
+.card:hover{
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 0 30px rgba(0,255,255,.4);
 }
 
-.galeria-item:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 25px rgba(0,255,255,.35);
+.card h3{
+  margin-bottom:15px;
+  font-size:20px;
+}
+
+/* CTA */
+.cta{
+  background:#02040a;
+}
+
+.cta p{
+  font-size:20px;
 }
 
 /* WHATSAPP */
-.whatsapp {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  background: #25D366;
-  color: white;
-  padding: 14px 20px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  box-shadow: 0 0 20px rgba(37,211,102,.8);
-  animation: pulse 2s infinite;
-  z-index: 999;
+.whatsapp{
+  position:fixed;
+  bottom:22px;
+  right:22px;
+  background:#25D366;
+  color:#fff;
+  padding:15px 22px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 0 25px rgba(37,211,102,.9);
+  animation:pulse 2s infinite;
+  z-index:999;
 }
 
 /* ANIMACIONES */
-@keyframes fadeIn {
-  from {opacity:0; transform:translateY(40px);}
-  to {opacity:1; transform:translateY(0);}
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(40px)}
+  to{opacity:1; transform:translateY(0)}
 }
 
-@keyframes pulse {
-  0% {box-shadow:0 0 0 rgba(37,211,102,.8);}
-  70% {box-shadow:0 0 30px rgba(37,211,102,1);}
-  100% {box-shadow:0 0 0 rgba(37,211,102,.8);}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 rgba(37,211,102,.9)}
+  70%{box-shadow:0 0 35px rgba(37,211,102,1)}
+  100%{box-shadow:0 0 0 rgba(37,211,102,.9)}
 }
 
 /* RESPONSIVE */
 @media(max-width:768px){
-  h1 {font-size:34px;}
+  h1{font-size:34px}
+  h2{font-size:28px}
 }
 </style>
 </head>
 
 <body>
 
-<header class="tech-bg">
+<header class="bg-tech">
   <div class="hero">
     <h1>EmeR Producciones</h1>
-    <p>Diseño gráfico · Flyers · Videos publicitarios · Marketing digital</p>
+    <p>
+      Impulsamos marcas con diseño gráfico, videos publicitarios  
+      y marketing digital de alto impacto.
+    </p>
     <a class="btn" href="https://wa.me/56982328639" target="_blank">
-      Contactar por WhatsApp
+      Potenciar mi negocio
     </a>
   </div>
 </header>
 
 <section class="servicios">
-  <h2>Servicios</h2>
-  <p>🎨 Diseño gráfico profesional</p>
-  <p>🎬 Videos publicitarios</p>
-  <p>📢 Marketing digital agresivo</p>
-  <p>📸 Producción audiovisual</p>
-</section>
+  <h2>Servicios Profesionales</h2>
 
-<section class="galeria">
-  <h2>Trabajos</h2>
-  <div class="galeria-grid">
-    <div class="galeria-item">FLYERS</div>
-    <div class="galeria-item">VIDEOS</div>
-    <div class="galeria-item">PUBLICIDAD</div>
-    <div class="galeria-item">EVENTOS</div>
+  <div class="servicios-grid">
+    <div class="card">
+      <h3>Diseño Gráfico</h3>
+      <p>Flyers, branding y piezas visuales que venden.</p>
+    </div>
+
+    <div class="card">
+      <h3>Videos Publicitarios</h3>
+      <p>Contenido audiovisual impactante y moderno.</p>
+    </div>
+
+    <div class="card">
+      <h3>Marketing Digital</h3>
+      <p>Estrategias agresivas para crecer rápido.</p>
+    </div>
+
+    <div class="card">
+      <h3>Producción de Eventos</h3>
+      <p>Imagen, video y promoción profesional.</p>
+    </div>
   </div>
 </section>
 
-<section class="contacto">
-  <h2>Contacto</h2>
-  <p>Hablemos de tu proyecto</p>
+<section class="cta">
+  <h2>¿Listo para destacar?</h2>
+  <p>Trabajemos juntos y llevemos tu marca al siguiente nivel.</p>
   <a class="btn" href="https://wa.me/56982328639" target="_blank">
-    Escríbenos por WhatsApp
+    Contactar ahora
   </a>
 </section>
 
