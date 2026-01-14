@@ -13,28 +13,27 @@
 body{
   font-family:'Montserrat',sans-serif;
   color:#fff;
+  background:#000;
   overflow-x:hidden;
 }
 
-/* ===== VIDEO DE FONDO REAL ===== */
+/* ===== VIDEO CINEMATIC ===== */
 .video-bg{
   position:fixed;
   inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
+  filter:brightness(.55) contrast(1.2) saturate(1.3);
   z-index:-3;
 }
 
 .overlay{
   position:fixed;
   inset:0;
-  background:linear-gradient(
-    135deg,
-    rgba(0,0,0,.85),
-    rgba(0,255,255,.35),
-    rgba(0,0,0,.9)
-  );
+  background:
+    radial-gradient(circle at center, rgba(0,255,255,.25), transparent 45%),
+    linear-gradient(135deg, rgba(0,0,0,.9), rgba(0,0,0,.6));
   z-index:-2;
 }
 
@@ -50,81 +49,96 @@ header{
 
 .hero{
   max-width:900px;
-  animation:entrada 1.4s ease;
 }
 
-/* LOGO EmeR CONTROL TOTAL */
+/* ===== LOGO EmeR ANIMADO ===== */
 .logo{
-  font-size:64px;
+  font-size:68px;
   font-weight:700;
   letter-spacing:4px;
-  text-shadow:
-    0 0 8px #00ffff,
-    0 0 25px #00ffff,
-    0 0 60px rgba(0,255,255,.9);
+  animation:glow 3s infinite alternate;
 }
 
-.E,.R{color:#00ffff}
-.me{color:#fff}
+.E,.R{
+  color:#00ffff;
+}
+
+.me{
+  color:#fff;
+}
 
 .sub{
   display:block;
-  margin-top:15px;
+  margin-top:16px;
   font-size:20px;
   letter-spacing:6px;
   color:#cfdfff;
 }
 
-/* TEXTO */
+/* TEXTO DINÁMICO */
 .hero p{
-  margin-top:30px;
-  font-size:20px;
+  margin-top:35px;
+  font-size:22px;
+  animation:fadeUp 1.8s ease;
 }
 
 /* BOTÓN */
 .btn{
   display:inline-block;
-  margin-top:40px;
-  padding:16px 45px;
-  border-radius:50px;
+  margin-top:45px;
+  padding:18px 50px;
+  border-radius:60px;
   border:2px solid #00ffff;
   color:#00ffff;
   text-decoration:none;
   font-weight:600;
-  transition:.3s;
+  transition:.4s;
 }
 
 .btn:hover{
   background:#00ffff;
   color:#000;
+  box-shadow:0 0 30px #00ffff;
 }
 
-/* SECCIONES */
+/* ===== SECCIONES ===== */
 section{
-  padding:110px 20px;
+  padding:120px 20px;
   text-align:center;
   background:#05070d;
 }
 
+h2{
+  font-size:38px;
+  letter-spacing:3px;
+}
+
+/* SERVICIOS ANIMADOS */
 .grid{
   max-width:1100px;
-  margin:60px auto 0;
+  margin:70px auto 0;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
+  gap:35px;
 }
 
 .card{
   background:rgba(0,0,0,.65);
-  border:1px solid rgba(0,255,255,.35);
-  border-radius:20px;
-  padding:40px 25px;
-  transition:.4s;
+  border:1px solid rgba(0,255,255,.4);
+  border-radius:22px;
+  padding:45px 25px;
+  opacity:0;
+  transform:translateY(60px);
+  animation:reveal 1.2s forwards;
 }
 
+.card:nth-child(2){animation-delay:.2s}
+.card:nth-child(3){animation-delay:.4s}
+.card:nth-child(4){animation-delay:.6s}
+
 .card:hover{
-  transform:translateY(-10px) scale(1.05);
-  box-shadow:0 0 40px rgba(0,255,255,.6);
+  transform:scale(1.06);
+  box-shadow:0 0 45px rgba(0,255,255,.7);
 }
 
 /* WHATSAPP */
@@ -134,18 +148,27 @@ section{
   right:22px;
   background:#25D366;
   color:#fff;
-  padding:15px 22px;
+  padding:16px 24px;
   border-radius:50px;
   text-decoration:none;
   font-weight:600;
-  box-shadow:0 0 30px rgba(37,211,102,1);
+  box-shadow:0 0 35px rgba(37,211,102,1);
   animation:pulse 2s infinite;
   z-index:999;
 }
 
-/* ANIMACIONES */
-@keyframes entrada{
+/* ===== ANIMACIONES ===== */
+@keyframes glow{
+  from{text-shadow:0 0 15px #00ffff}
+  to{text-shadow:0 0 45px #00ffff}
+}
+
+@keyframes fadeUp{
   from{opacity:0;transform:translateY(50px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes reveal{
   to{opacity:1;transform:translateY(0)}
 }
 
@@ -157,14 +180,14 @@ section{
 
 /* RESPONSIVE */
 @media(max-width:768px){
-  .logo{font-size:40px}
+  .logo{font-size:42px}
+  h2{font-size:28px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- VIDEO REAL -->
 <video class="video-bg" autoplay muted loop playsinline>
   <source src="video.mp4" type="video/mp4">
 </video>
@@ -190,8 +213,9 @@ section{
 
 <section>
   <h2>Servicios</h2>
+
   <div class="grid">
-    <div class="card">Diseño Gráfico</div>
+    <div class="card">Diseño Gráfico Profesional</div>
     <div class="card">Videos Publicitarios</div>
     <div class="card">Marketing Digital</div>
     <div class="card">Producción de Eventos</div>
