@@ -5,13 +5,13 @@
 <title>EmeR Producciones</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
   font-family: 'Montserrat', Arial, sans-serif;
-  background: #0b0b0b;
+  background-color: #0b0b0b;
   color: white;
   text-align: center;
 }
@@ -19,13 +19,11 @@ body {
 /* HEADER */
 header {
   min-height: 80vh;
-  background-image: url("fondo.png");
-  background-size: cover;
-  background-position: center;
-  position: relative;
+  background: url("fondo.png") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 header::before {
@@ -37,41 +35,35 @@ header::before {
 
 .header-content {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   padding: 40px 20px;
 }
 
-/* TEXTOS */
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 44px;
-  letter-spacing: 2px;
+  font-size: 42px;
   margin-bottom: 10px;
 }
 
 h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 32px;
+  font-size: 30px;
   margin-bottom: 20px;
 }
 
 p {
   font-size: 18px;
-  opacity: 0.9;
 }
 
 /* BOTÓN */
 .btn {
   display: inline-block;
-  margin-top: 30px;
-  padding: 14px 36px;
+  margin-top: 25px;
+  padding: 14px 32px;
   border: 2px solid white;
-  border-radius: 50px;
+  border-radius: 40px;
   color: white;
   text-decoration: none;
-  transition: 0.3s;
-  position: relative;
-  overflow: hidden;
 }
 
 .btn:hover {
@@ -79,48 +71,17 @@ p {
   color: black;
 }
 
-.btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255,255,255,0.3);
-  transition: 0.4s;
-}
-
-.btn:hover::after {
-  left: 100%;
-}
-
 /* SECCIONES */
 section {
-  padding: 80px 20px;
+  padding: 70px 20px;
 }
 
 .servicios {
-  background: #0b0b0b;
+  background-color: #0b0b0b;
 }
 
 .contacto {
-  background: #111;
-}
-
-.servicios p {
-  margin: 10px 0;
-}
-
-/* ANIMACIONES MARKETING */
-.fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 1s ease;
-}
-
-.fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
+  background-color: #111;
 }
 </style>
 </head>
@@ -128,7 +89,7 @@ section {
 <body>
 
 <header>
-  <div class="header-content fade-up">
+  <div class="header-content">
     <h1>EmeR Producciones</h1>
     <p>Diseño gráfico · Flyers · Videos publicitarios · Producción digital</p>
     <a class="btn" href="https://wa.me/56912345678" target="_blank">
@@ -137,38 +98,21 @@ section {
   </div>
 </header>
 
-<section class="servicios fade-up">
+<section class="servicios">
   <h2>Servicios</h2>
-  <p>🎨 Diseño de flyers y material gráfico</p>
+  <p>🎨 Diseño de flyers</p>
   <p>🎬 Videos publicitarios</p>
   <p>📢 Publicidad digital</p>
-  <p>📸 Producción audiovisual para eventos</p>
+  <p>📸 Producción para eventos</p>
 </section>
 
-<section class="contacto fade-up">
+<section class="contacto">
   <h2>Contacto</h2>
-  <p>Hablemos de tu proyecto</p>
-  <a class="btn" href="https://wa.me/56912345678" target="_blank">
-    Escríbenos por WhatsApp
+  <p>Escríbenos y hagamos tu proyecto realidad</p>
+  <a class="btn" href="https://wa.me/56982328639" target="_blank">
+    WhatsApp
   </a>
 </section>
-
-<script>
-const elements = document.querySelectorAll('.fade-up');
-
-const showOnScroll = () => {
-  const triggerBottom = window.innerHeight * 0.85;
-  elements.forEach(el => {
-    const boxTop = el.getBoundingClientRect().top;
-    if (boxTop < triggerBottom) {
-      el.classList.add('show');
-    }
-  });
-};
-
-window.addEventListener('scroll', showOnScroll);
-window.addEventListener('load', showOnScroll);
-</script>
 
 </body>
 </html>
