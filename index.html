@@ -39,6 +39,7 @@ header::before {
   padding: 40px 20px;
 }
 
+/* TEXTOS */
 h1 {
   font-family: 'Playfair Display', serif;
   font-size: 42px;
@@ -83,13 +84,29 @@ section {
 .contacto {
   background-color: #111;
 }
+
+/* ANIMACIÓN SIMPLE Y SEGURA */
+.fade-in {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="header-content">
+  <div class="header-content fade-in">
     <h1>EmeR Producciones</h1>
     <p>Diseño gráfico · Flyers · Videos publicitarios · Producción digital</p>
     <a class="btn" href="https://wa.me/56982328639" target="_blank">
@@ -98,15 +115,15 @@ section {
   </div>
 </header>
 
-<section class="servicios">
+<section class="servicios fade-in">
   <h2>Servicios</h2>
   <p>🎨 Diseño de flyers</p>
   <p>🎬 Videos publicitarios</p>
   <p>📢 Publicidad digital</p>
-  <p>📸 Producción para eventos</p>
+  <p>📸 Producción audiovisual para eventos</p>
 </section>
 
-<section class="contacto">
+<section class="contacto fade-in">
   <h2>Contacto</h2>
   <p>Escríbenos y hagamos tu proyecto realidad</p>
   <a class="btn" href="https://wa.me/56982328639" target="_blank">
