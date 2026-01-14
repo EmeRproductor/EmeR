@@ -8,36 +8,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
   font-family:'Montserrat',sans-serif;
   color:#fff;
-  background:#02040a;
+  background:#05070d;
   overflow-x:hidden;
 }
 
-/* ===== VIDEO DE FONDO ===== */
-.video-bg{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:-3;
-}
-
-.video-overlay{
+/* ===== FONDO TECNOLÓGICO ===== */
+.fondo{
   position:fixed;
   inset:0;
   background:
-    linear-gradient(135deg,
-      rgba(0,255,255,.35),
-      rgba(0,0,0,.85),
-      rgba(255,0,150,.35)
-    );
-  z-index:-2;
+    radial-gradient(circle at top, rgba(0,255,255,.25), transparent 40%),
+    linear-gradient(135deg,#05070d,#000);
+  z-index:-3;
+}
+
+.fondo::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("fondo.png") center/cover no-repeat;
+  opacity:.25;
 }
 
 /* ===== HERO ===== */
@@ -52,32 +47,39 @@ header{
 
 .hero{
   max-width:900px;
-  animation:fadeUp 1.4s ease;
+  animation:entrada 1.5s ease;
 }
 
-/* ===== TITULO NEÓN (EmeR exacto) ===== */
-.logo-emer{
+/* ===== LOGO EmeR CONTROL TOTAL ===== */
+.logo{
   font-size:64px;
   font-weight:700;
-  letter-spacing:3px;
-  color:#eaffff;
+  letter-spacing:4px;
   text-shadow:
-    0 0 6px #00ffff,
-    0 0 18px #00ffff,
-    0 0 40px rgba(0,255,255,.8),
-    0 0 80px rgba(0,255,255,.6);
+    0 0 8px #00ffff,
+    0 0 25px #00ffff,
+    0 0 60px rgba(0,255,255,.8);
 }
 
-.logo-sub{
+.E, .R{
+  color:#00ffff;
+}
+
+.me{
+  color:#ffffff;
+  font-weight:600;
+}
+
+.sub{
   display:block;
+  margin-top:15px;
   font-size:20px;
-  font-weight:500;
   letter-spacing:6px;
-  margin-top:12px;
   color:#cfdfff;
   opacity:.9;
 }
 
+/* TEXTO */
 .hero p{
   margin-top:30px;
   font-size:20px;
@@ -102,17 +104,16 @@ header{
   color:#000;
 }
 
-/* SECCIONES */
+/* ===== SECCIONES ===== */
 section{
   padding:110px 20px;
   text-align:center;
-  background:rgba(2,4,10,.92);
+  background:#05070d;
 }
 
 h2{
   font-size:36px;
   letter-spacing:2px;
-  margin-bottom:30px;
 }
 
 /* SERVICIOS */
@@ -126,29 +127,26 @@ h2{
 
 .card{
   background:rgba(0,0,0,.6);
-  border:1px solid rgba(0,255,255,.3);
+  border:1px solid rgba(0,255,255,.35);
   border-radius:20px;
   padding:40px 25px;
-  transition:.35s;
+  transition:.4s;
 }
 
 .card:hover{
-  transform:translateY(-12px) scale(1.06);
-  box-shadow:0 0 35px rgba(0,255,255,.45);
+  transform:translateY(-12px) scale(1.05);
+  box-shadow:0 0 40px rgba(0,255,255,.6);
 }
 
 .card h3{
-  font-size:22px;
   margin-bottom:15px;
-}
-
-/* CTA */
-.cta{
-  background:#02040a;
-}
-
-.cta p{
   font-size:22px;
+}
+
+/* CONTACTO */
+.contacto p{
+  font-size:22px;
+  margin-top:20px;
 }
 
 /* WHATSAPP */
@@ -157,19 +155,19 @@ h2{
   bottom:22px;
   right:22px;
   background:#25D366;
-  color:white;
+  color:#fff;
   padding:15px 22px;
   border-radius:50px;
   text-decoration:none;
   font-weight:600;
-  box-shadow:0 0 35px rgba(37,211,102,1);
+  box-shadow:0 0 30px rgba(37,211,102,1);
   animation:pulse 2s infinite;
   z-index:999;
 }
 
 /* ANIMACIONES */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(50px)}
+@keyframes entrada{
+  from{opacity:0;transform:translateY(60px)}
   to{opacity:1;transform:translateY(0)}
 }
 
@@ -181,7 +179,7 @@ h2{
 
 /* RESPONSIVE */
 @media(max-width:768px){
-  .logo-emer{font-size:38px}
+  .logo{font-size:40px}
   h2{font-size:28px}
 }
 </style>
@@ -189,17 +187,13 @@ h2{
 
 <body>
 
-<!-- VIDEO FONDO -->
-<video class="video-bg" autoplay muted loop playsinline>
-  <source src="video.mp4" type="video/mp4">
-</video>
-<div class="video-overlay"></div>
+<div class="fondo"></div>
 
 <header>
   <div class="hero">
-    <h1 class="logo-emer">
-      EmeR
-      <span class="logo-sub">Producciones</span>
+    <h1 class="logo">
+      <span class="E">E</span><span class="me">me</span><span class="R">R</span>
+      <span class="sub">Producciones</span>
     </h1>
 
     <p>
@@ -213,37 +207,38 @@ h2{
   </div>
 </header>
 
-<section class="servicios">
-  <h2>Servicios Premium</h2>
+<section>
+  <h2>Servicios</h2>
 
   <div class="grid">
     <div class="card">
       <h3>Diseño Gráfico</h3>
-      <p>Flyers, branding y piezas visuales profesionales.</p>
+      <p>Flyers, branding y piezas visuales modernas.</p>
     </div>
 
     <div class="card">
       <h3>Videos Publicitarios</h3>
-      <p>Contenido audiovisual moderno y agresivo.</p>
+      <p>Contenido audiovisual potente y profesional.</p>
     </div>
 
     <div class="card">
       <h3>Marketing Digital</h3>
-      <p>Estrategias para crecer rápido y vender más.</p>
+      <p>Impulsa tu marca y aumenta tus ventas.</p>
     </div>
 
     <div class="card">
       <h3>Producción de Eventos</h3>
-      <p>Imagen, video y promoción profesional.</p>
+      <p>Imagen, video y promoción integral.</p>
     </div>
   </div>
 </section>
 
-<section class="cta">
-  <h2>¿Listo para destacar?</h2>
-  <p>Trabajemos juntos y llevemos tu negocio al siguiente nivel.</p>
+<section class="contacto">
+  <h2>Contacto</h2>
+  <p>📞 WhatsApp: +56 9 8232 8639</p>
+
   <a class="btn" href="https://wa.me/56982328639" target="_blank">
-    Contactar ahora
+    Escríbenos ahora
   </a>
 </section>
 
