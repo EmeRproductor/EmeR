@@ -14,137 +14,64 @@
 }
 
 body{
-  height:100vh;
   background:black;
-  overflow:hidden;
   color:white;
+  overflow-x:hidden;
 }
 
 /* VIDEO FONDO */
 video{
   position:fixed;
-  top:0;
-  left:0;
+  inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
-  z-index:-3;
+  z-index:-5;
 }
 
 /* OVERLAY */
 .overlay{
   position:fixed;
   inset:0;
-  background:radial-gradient(circle at center, rgba(255,0,255,.25), rgba(0,0,0,.9));
-  z-index:-2;
+  background:radial-gradient(circle at center, rgba(255,0,255,.25), rgba(0,0,0,.92));
+  z-index:-4;
 }
 
-/* PARTÍCULAS */
-.particles span{
-  position:absolute;
-  width:4px;
-  height:4px;
-  background:#ff00ff;
-  box-shadow:0 0 12px #ff00ff;
-  animation:move 12s linear infinite;
-}
-
-@keyframes move{
-  from{transform:translateY(100vh) scale(.3)}
-  to{transform:translateY(-10vh) scale(1)}
-}
-
-/* CONTENEDOR */
+/* HERO */
 .hero{
-  height:100vh;
+  min-height:100vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
-  padding:20px;
+  padding:30px;
 }
 
 /* TITULO */
-.glitch{
-  font-size:130px;
+.title{
+  font-size:150px;
   font-weight:900;
-  letter-spacing:8px;
-  position:relative;
+  letter-spacing:10px;
   color:#ff00ff;
   text-shadow:
-    0 0 25px #ff00ff,
-    0 0 70px #ff00ff,
-    0 0 100px black;
-  animation:beat 1.8s infinite;
+    0 0 30px #ff00ff,
+    0 0 80px #ff00ff,
+    0 0 120px black;
+  animation:beat 1.5s infinite;
 }
 
-.glitch::before,
-.glitch::after{
-  content:attr(data-text);
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-}
-
-.glitch::before{
-  color:black;
-  transform:translate(-4px,0);
-  opacity:.7;
-}
-
-.glitch::after{
-  color:#ff00ff;
-  transform:translate(4px,0);
-  opacity:.9;
+@keyframes beat{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.08)}
 }
 
 /* SUBTITULO */
 .roles{
-  margin-top:20px;
+  margin-top:15px;
   font-size:20px;
   letter-spacing:3px;
-  text-transform:uppercase;
   animation:neon 4s infinite;
-}
-
-/* SERVICIOS */
-.services{
-  margin-top:45px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:22px;
-  justify-content:center;
-}
-
-.service{
-  padding:20px 28px;
-  border-radius:16px;
-  background:linear-gradient(145deg, rgba(255,0,255,.15), rgba(0,0,0,.8));
-  border:1px solid #ff00ff;
-  box-shadow:0 0 30px rgba(255,0,255,.6);
-  animation:float 5s ease-in-out infinite;
-}
-
-/* CONTACTO */
-.contact{
-  margin-top:50px;
-  font-size:22px;
-}
-
-.contact a{
-  color:#00ffee;
-  text-decoration:none;
-  font-weight:800;
-  text-shadow:0 0 25px #00ffee;
-  animation:pulse 1.5s infinite;
-}
-
-/* ANIMACIONES */
-@keyframes beat{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.06)}
 }
 
 @keyframes neon{
@@ -153,9 +80,66 @@ video{
   100%{color:#ff00ff}
 }
 
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-14px)}
+/* SERVICIOS */
+.services{
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+  width:100%;
+  max-width:1100px;
+  perspective:1200px;
+}
+
+/* TARJETA */
+.service{
+  position:relative;
+  height:280px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 0 40px rgba(255,0,255,.6);
+  transform-style:preserve-3d;
+  transition:.3s;
+}
+
+.service:hover{
+  transform:rotateX(10deg) rotateY(-10deg) scale(1.05);
+}
+
+/* IMAGEN */
+.service img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.75;
+}
+
+/* TEXTO */
+.service .info{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(to top,rgba(0,0,0,.95),rgba(0,0,0,.3));
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-shadow:0 0 20px #ff00ff;
+}
+
+/* CONTACTO */
+.contact{
+  margin-top:60px;
+  font-size:24px;
+}
+
+.contact a{
+  color:#00ffee;
+  text-decoration:none;
+  font-weight:900;
+  text-shadow:0 0 30px #00ffee;
+  animation:pulse 1.5s infinite;
 }
 
 @keyframes pulse{
@@ -166,7 +150,7 @@ video{
 
 /* RESPONSIVE */
 @media(max-width:600px){
-  .glitch{font-size:85px}
+  .title{font-size:90px}
   .roles{font-size:15px}
 }
 </style>
@@ -181,29 +165,36 @@ video{
 
 <div class="overlay"></div>
 
-<!-- PARTÍCULAS -->
-<div class="particles">
-  <span style="left:10%"></span>
-  <span style="left:25%"></span>
-  <span style="left:40%"></span>
-  <span style="left:55%"></span>
-  <span style="left:70%"></span>
-  <span style="left:85%"></span>
-</div>
-
 <section class="hero">
 
-  <h1 class="glitch" data-text="EmeR">EmeR</h1>
+  <div class="title">EmeR</div>
 
   <div class="roles">
     Productor · DJ · Barbero · Pastelero
   </div>
 
   <div class="services">
-    <div class="service">Flyers</div>
-    <div class="service">Videos Publicitarios</div>
-    <div class="service">Marketing Digital</div>
-    <div class="service">Branding</div>
+
+    <div class="service">
+      <img src="flyer.jpg">
+      <div class="info">Flyers</div>
+    </div>
+
+    <div class="service">
+      <img src="video.jpg">
+      <div class="info">Videos Publicitarios</div>
+    </div>
+
+    <div class="service">
+      <img src="marketing.jpg">
+      <div class="info">Marketing Digital</div>
+    </div>
+
+    <div class="service">
+      <img src="branding.jpg">
+      <div class="info">Branding</div>
+    </div>
+
   </div>
 
   <div class="contact">
