@@ -2,264 +2,177 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<h1 class="logo">
-  <span class="E">E</span><span class="me">me</span><span class="R">R</span>
-  <span class="roles">( Productor · Dj · Barbero · Pastelero )</span>
-</h1>
-  | Agencia Digital</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EmeR Producciones</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-/* ===== TITULO FIESTA ===== */
-.roles{
-  display:block;
-  margin-top:18px;
-  font-size:20px;
-  font-weight:600;
-  letter-spacing:2px;
-  animation:fiesta 4s linear infinite;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Orbitron', sans-serif;
 }
 
-@keyframes fiesta{
-  0%{
-    color:#ff005d;
-    text-shadow:0 0 10px #ff005d;
-  }
-  25%{
-    color:#00ffff;
-    text-shadow:0 0 12px #00ffff;
-  }
-  50%{
-    color:#39ff14;
-    text-shadow:0 0 14px #39ff14;
-  }
-  75%{
-    color:#ffd000;
-    text-shadow:0 0 14px #ffd000;
-  }
-  100%{
-    color:#ff005d;
-    text-shadow:0 0 10px #ff005d;
-  }
-}
 body{
-  font-family:'Montserrat',sans-serif;
-  color:#fff;
-  background:#000;
-  overflow-x:hidden;
+  height:100vh;
+  overflow:hidden;
+  color:white;
 }
 
-/* ===== VIDEO CINEMATIC ===== */
+/* VIDEO DE FONDO */
 .video-bg{
   position:fixed;
-  inset:0;
+  top:0;
+  left:0;
   width:100%;
   height:100%;
   object-fit:cover;
-  filter:brightness(.55) contrast(1.2) saturate(1.3);
-  z-index:-3;
-}
-
-.overlay{
-  position:fixed;
-  inset:0;
-  background:
-    radial-gradient(circle at center, rgba(0,255,255,.25), transparent 45%),
-    linear-gradient(135deg, rgba(0,0,0,.9), rgba(0,0,0,.6));
   z-index:-2;
 }
 
-/* ===== HERO ===== */
-header{
-  min-height:100vh;
+/* OSCURECER VIDEO */
+.overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.65);
+  z-index:-1;
+}
+
+/* CONTENIDO */
+.container{
+  height:100vh;
   display:flex;
-  align-items:center;
+  flex-direction:column;
   justify-content:center;
+  align-items:center;
   text-align:center;
-  padding:40px 20px;
+  padding:20px;
 }
 
-.hero{
-  max-width:900px;
-}
-
-/* ===== LOGO EmeR ANIMADO ===== */
+/* TITULO */
 .logo{
-  font-size:68px;
-  font-weight:700;
-  letter-spacing:4px;
-  animation:glow 3s infinite alternate;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
-.E,.R{
-  color:#00ffff;
-}
-
-.me{
-  color:#fff;
-}
-
-.sub{
-  display:block;
-  margin-top:16px;
-  font-size:20px;
+.logo-main{
+  font-size:70px;
+  font-weight:800;
   letter-spacing:6px;
-  color:#cfdfff;
 }
 
-/* TEXTO DINÁMICO */
-.hero p{
-  margin-top:35px;
-  font-size:22px;
-  animation:fadeUp 1.8s ease;
-}
-
-/* BOTÓN */
-.btn{
-  display:inline-block;
-  margin-top:45px;
-  padding:18px 50px;
-  border-radius:60px;
-  border:2px solid #00ffff;
+.logo-main .E{
   color:#00ffff;
-  text-decoration:none;
-  font-weight:600;
-  transition:.4s;
+  text-shadow:0 0 15px #00ffff;
 }
 
-.btn:hover{
-  background:#00ffff;
-  color:#000;
-  box-shadow:0 0 30px #00ffff;
+.logo-main .me{
+  color:white;
 }
 
-/* ===== SECCIONES ===== */
-section{
-  padding:120px 20px;
-  text-align:center;
-  background:#05070d;
+.logo-main .R{
+  color:#ff00ff;
+  text-shadow:0 0 15px #ff00ff;
 }
 
-h2{
-  font-size:38px;
-  letter-spacing:3px;
+.roles{
+  margin-top:15px;
+  font-size:18px;
+  letter-spacing:2px;
+  animation:partyColors 5s linear infinite;
 }
 
-/* SERVICIOS ANIMADOS */
-.grid{
-  max-width:1100px;
-  margin:70px auto 0;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:35px;
+@keyframes partyColors{
+  0%{color:#00ffff;}
+  25%{color:#ff00ff;}
+  50%{color:#00ff00;}
+  75%{color:#ffff00;}
+  100%{color:#00ffff;}
 }
 
-.card{
-  background:rgba(0,0,0,.65);
-  border:1px solid rgba(0,255,255,.4);
-  border-radius:22px;
-  padding:45px 25px;
-  opacity:0;
-  transform:translateY(60px);
-  animation:reveal 1.2s forwards;
+/* SERVICIOS */
+.services{
+  margin-top:40px;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
 }
 
-.card:nth-child(2){animation-delay:.2s}
-.card:nth-child(3){animation-delay:.4s}
-.card:nth-child(4){animation-delay:.6s}
+.service{
+  padding:15px 25px;
+  border:1px solid rgba(255,255,255,0.3);
+  border-radius:12px;
+  backdrop-filter:blur(6px);
+  animation:float 4s ease-in-out infinite;
+}
 
-.card:hover{
-  transform:scale(1.06);
-  box-shadow:0 0 45px rgba(0,255,255,.7);
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
 }
 
 /* WHATSAPP */
 .whatsapp{
-  position:fixed;
-  bottom:22px;
-  right:22px;
-  background:#25D366;
-  color:#fff;
-  padding:16px 24px;
-  border-radius:50px;
+  margin-top:40px;
+}
+
+.whatsapp a{
   text-decoration:none;
-  font-weight:600;
-  box-shadow:0 0 35px rgba(37,211,102,1);
-  animation:pulse 2s infinite;
-  z-index:999;
-}
-
-/* ===== ANIMACIONES ===== */
-@keyframes glow{
-  from{text-shadow:0 0 15px #00ffff}
-  to{text-shadow:0 0 45px #00ffff}
-}
-
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(50px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-@keyframes reveal{
-  to{opacity:1;transform:translateY(0)}
-}
-
-@keyframes pulse{
-  0%{box-shadow:0 0 0 rgba(37,211,102,.9)}
-  70%{box-shadow:0 0 45px rgba(37,211,102,1)}
-  100%{box-shadow:0 0 0 rgba(37,211,102,.9)}
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  .logo{font-size:42px}
-  h2{font-size:28px}
+  color:black;
+  background:#25D366;
+  padding:15px 30px;
+  border-radius:40px;
+  font-weight:700;
+  box-shadow:0 0 20px rgba(37,211,102,0.6);
 }
 </style>
 </head>
 
 <body>
 
-<video class="video-bg" autoplay muted loop playsinline>
+<!-- VIDEO DE FONDO -->
+<video class="video-bg" autoplay muted loop>
   <source src="video.mp4" type="video/mp4">
 </video>
+
 <div class="overlay"></div>
 
-<header>
-  <div class="hero">
-    <h1 class="logo">
+<div class="container">
+
+  <!-- TITULO -->
+  <div class="logo">
+    <div class="logo-main">
       <span class="E">E</span><span class="me">me</span><span class="R">R</span>
-      <span class="sub">Producciones</span>
-    </h1>
+    </div>
+    <div class="roles">
+      Productor · DJ · Barbero · Pastelero
+    </div>
+  </div>
 
-    <p>
-      Diseño gráfico · Flyers · Videos publicitarios ·  
-      Marketing digital de alto impacto
-    </p>
+  <!-- SERVICIOS -->
+  <div class="services">
+    <div class="service">🎨 Diseño Gráfico</div>
+    <div class="service">🎥 Videos Publicitarios</div>
+    <div class="service">📢 Flyers & Marketing</div>
+    <div class="service">🎧 Producción de Eventos</div>
+  </div>
 
-    <a class="btn" href="https://wa.me/56982328639" target="_blank">
-      Impulsar mi marca
+  <!-- WHATSAPP -->
+  <div class="whatsapp">
+    <a href="https://wa.me/56982328639" target="_blank">
+      📲 WhatsApp 56982328639
     </a>
   </div>
-</header>
 
-<section>
-  <h2>Servicios</h2>
-
-  <div class="grid">
-    <div class="card">Diseño Gráfico Profesional</div>
-    <div class="card">Videos Publicitarios</div>
-    <div class="card">Marketing Digital</div>
-    <div class="card">Producción de Eventos</div>
-  </div>
-</section>
-
-<a class="whatsapp" href="https://wa.me/56982328639" target="_blank">
-  💬 WhatsApp
-</a>
+</div>
 
 </body>
 </html>
