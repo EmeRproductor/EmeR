@@ -19,6 +19,31 @@ body{
   overflow-x:hidden;
 }
 
+/* INTRO */
+#intro{
+  position:fixed;
+  inset:0;
+  background:black;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+  animation:introFade 4s forwards;
+}
+
+#intro h1{
+  font-size:120px;
+  color:#ff00ff;
+  text-shadow:0 0 40px #ff00ff;
+  animation:pulse 1.2s infinite;
+}
+
+@keyframes introFade{
+  0%{opacity:1}
+  80%{opacity:1}
+  100%{opacity:0;pointer-events:none}
+}
+
 /* VIDEO FONDO */
 video{
   position:fixed;
@@ -33,7 +58,7 @@ video{
 .overlay{
   position:fixed;
   inset:0;
-  background:radial-gradient(circle at center, rgba(255,0,255,.25), rgba(0,0,0,.92));
+  background:radial-gradient(circle at center, rgba(255,0,255,.3), rgba(0,0,0,.95));
   z-index:-4;
 }
 
@@ -50,28 +75,28 @@ video{
 
 /* TITULO */
 .title{
-  font-size:150px;
+  font-size:160px;
   font-weight:900;
-  letter-spacing:10px;
+  letter-spacing:12px;
   color:#ff00ff;
   text-shadow:
     0 0 30px #ff00ff,
-    0 0 80px #ff00ff,
-    0 0 120px black;
-  animation:beat 1.5s infinite;
+    0 0 90px #ff00ff,
+    0 0 140px black;
+  animation:beat 1.4s infinite;
 }
 
 @keyframes beat{
   0%,100%{transform:scale(1)}
-  50%{transform:scale(1.08)}
+  50%{transform:scale(1.1)}
 }
 
-/* SUBTITULO */
+/* SUB */
 .roles{
-  margin-top:15px;
-  font-size:20px;
-  letter-spacing:3px;
-  animation:neon 4s infinite;
+  margin-top:10px;
+  font-size:22px;
+  letter-spacing:4px;
+  animation:neon 3.5s infinite;
 }
 
 @keyframes neon{
@@ -82,64 +107,61 @@ video{
 
 /* SERVICIOS */
 .services{
-  margin-top:60px;
+  margin-top:70px;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:35px;
   width:100%;
-  max-width:1100px;
-  perspective:1200px;
+  max-width:1200px;
+  perspective:1400px;
 }
 
-/* TARJETA */
 .service{
   position:relative;
-  height:280px;
-  border-radius:20px;
+  height:300px;
+  border-radius:22px;
   overflow:hidden;
-  box-shadow:0 0 40px rgba(255,0,255,.6);
+  box-shadow:0 0 50px rgba(255,0,255,.7);
   transform-style:preserve-3d;
-  transition:.3s;
+  transition:.4s;
 }
 
 .service:hover{
-  transform:rotateX(10deg) rotateY(-10deg) scale(1.05);
+  transform:rotateX(12deg) rotateY(-12deg) scale(1.08);
 }
 
-/* IMAGEN */
 .service img{
   width:100%;
   height:100%;
   object-fit:cover;
-  opacity:.75;
+  opacity:.8;
 }
 
-/* TEXTO */
 .service .info{
   position:absolute;
   inset:0;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:linear-gradient(to top,rgba(0,0,0,.95),rgba(0,0,0,.3));
-  font-size:22px;
+  background:linear-gradient(to top,rgba(0,0,0,.95),rgba(0,0,0,.2));
+  font-size:24px;
   font-weight:900;
   letter-spacing:2px;
-  text-shadow:0 0 20px #ff00ff;
+  text-shadow:0 0 25px #ff00ff;
 }
 
 /* CONTACTO */
 .contact{
-  margin-top:60px;
-  font-size:24px;
+  margin-top:70px;
+  font-size:26px;
 }
 
 .contact a{
   color:#00ffee;
   text-decoration:none;
   font-weight:900;
-  text-shadow:0 0 30px #00ffee;
-  animation:pulse 1.5s infinite;
+  text-shadow:0 0 35px #00ffee;
+  animation:pulse 1.4s infinite;
 }
 
 @keyframes pulse{
@@ -151,12 +173,17 @@ video{
 /* RESPONSIVE */
 @media(max-width:600px){
   .title{font-size:90px}
-  .roles{font-size:15px}
+  .roles{font-size:14px}
 }
 </style>
 </head>
 
 <body>
+
+<!-- INTRO -->
+<div id="intro">
+  <h1>EmeR</h1>
+</div>
 
 <!-- VIDEO -->
 <video autoplay muted loop>
