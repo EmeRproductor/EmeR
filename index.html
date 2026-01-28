@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EmeR Producciones</title>
+<title>EmeR</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -16,13 +16,13 @@
 }
 
 body{
-  height:100vh;
-  overflow:hidden;
+  background:black;
   color:white;
+  overflow-x:hidden;
 }
 
-/* VIDEO DE FONDO */
-.video-bg{
+/* VIDEO */
+video{
   position:fixed;
   top:0;
   left:0;
@@ -32,63 +32,74 @@ body{
   z-index:-2;
 }
 
-/* OSCURECER VIDEO */
+/* OVERLAY AGRESIVO */
 .overlay{
   position:fixed;
-  top:0;
-  left:0;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.65);
+  background:radial-gradient(circle, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
   z-index:-1;
 }
 
-/* CONTENIDO */
+/* CONTENEDOR */
 .container{
-  height:100vh;
+  min-height:100vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
-  padding:20px;
+  padding:30px;
 }
 
-/* TITULO */
-.logo{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
-
-.logo-main{
-  font-size:70px;
-  font-weight:800;
-  letter-spacing:6px;
-}
-
-.logo-main .E{
-  color:#00ffff;
-  text-shadow:0 0 15px #00ffff;
-}
-
-.logo-main .me{
+/* GLITCH TITLE */
+.glitch{
+  font-size:80px;
+  font-weight:900;
+  position:relative;
   color:white;
+  letter-spacing:6px;
+  text-transform:uppercase;
 }
 
-.logo-main .R{
+.glitch::before,
+.glitch::after{
+  content:"EmeR";
+  position:absolute;
+  left:0;
+  width:100%;
+}
+
+.glitch::before{
+  color:#00ffff;
+  animation:glitch1 2s infinite;
+}
+
+.glitch::after{
   color:#ff00ff;
-  text-shadow:0 0 15px #ff00ff;
+  animation:glitch2 2s infinite;
 }
 
-.roles{
-  margin-top:15px;
-  font-size:18px;
-  letter-spacing:2px;
-  animation:partyColors 5s linear infinite;
+@keyframes glitch1{
+  0%{transform:translate(2px,-2px);}
+  50%{transform:translate(-2px,2px);}
+  100%{transform:translate(2px,-2px);}
 }
 
-@keyframes partyColors{
+@keyframes glitch2{
+  0%{transform:translate(-2px,2px);}
+  50%{transform:translate(2px,-2px);}
+  100%{transform:translate(-2px,2px);}
+}
+
+/* SUBTITULO */
+.subtitle{
+  margin-top:20px;
+  font-size:20px;
+  animation:colors 4s infinite linear;
+}
+
+@keyframes colors{
   0%{color:#00ffff;}
   25%{color:#ff00ff;}
   50%{color:#00ff00;}
@@ -98,48 +109,46 @@ body{
 
 /* SERVICIOS */
 .services{
-  margin-top:40px;
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  justify-content:center;
+  margin-top:50px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:25px;
+  width:100%;
+  max-width:900px;
 }
 
 .service{
-  padding:15px 25px;
-  border:1px solid rgba(255,255,255,0.3);
-  border-radius:12px;
-  backdrop-filter:blur(6px);
-  animation:float 4s ease-in-out infinite;
+  padding:25px;
+  border-radius:15px;
+  background:rgba(0,0,0,0.6);
+  border:1px solid rgba(255,255,255,0.2);
+  transition:0.4s;
 }
 
-@keyframes float{
-  0%{transform:translateY(0);}
-  50%{transform:translateY(-10px);}
-  100%{transform:translateY(0);}
+.service:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 30px #00ffff;
 }
 
-/* WHATSAPP */
+/* WHATSAPP FLOAT */
 .whatsapp{
-  margin-top:40px;
-}
-
-.whatsapp a{
-  text-decoration:none;
-  color:black;
+  position:fixed;
+  bottom:25px;
+  right:25px;
   background:#25D366;
-  padding:15px 30px;
-  border-radius:40px;
-  font-weight:700;
-  box-shadow:0 0 20px rgba(37,211,102,0.6);
+  color:black;
+  padding:15px 22px;
+  border-radius:50px;
+  font-weight:bold;
+  text-decoration:none;
+  box-shadow:0 0 25px #25D366;
 }
 </style>
 </head>
 
 <body>
 
-<!-- VIDEO DE FONDO -->
-<video class="video-bg" autoplay muted loop>
+<video autoplay muted loop>
   <source src="video.mp4" type="video/mp4">
 </video>
 
@@ -147,32 +156,24 @@ body{
 
 <div class="container">
 
-  <!-- TITULO -->
-  <div class="logo">
-    <div class="logo-main">
-      <span class="E">E</span><span class="me">me</span><span class="R">R</span>
-    </div>
-    <div class="roles">
-      Productor · DJ · Barbero · Pastelero
-    </div>
+  <div class="glitch">EmeR</div>
+
+  <div class="subtitle">
+    Productor · DJ · Barbero · Pastelero
   </div>
 
-  <!-- SERVICIOS -->
   <div class="services">
-    <div class="service">🎨 Diseño Gráfico</div>
+    <div class="service">🎨 Diseño de Flyers</div>
     <div class="service">🎥 Videos Publicitarios</div>
-    <div class="service">📢 Flyers & Marketing</div>
-    <div class="service">🎧 Producción de Eventos</div>
-  </div>
-
-  <!-- WHATSAPP -->
-  <div class="whatsapp">
-    <a href="https://wa.me/56982328639" target="_blank">
-      📲 WhatsApp 56982328639
-    </a>
+    <div class="service">📢 Marketing Digital</div>
+    <div class="service">🎧 Producción & Eventos</div>
   </div>
 
 </div>
+
+<a class="whatsapp" href="https://wa.me/56982328639" target="_blank">
+  📲 56982328639
+</a>
 
 </body>
 </html>
