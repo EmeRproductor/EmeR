@@ -2,11 +2,10 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>EmeR 
-  Productor
-  Dj
-  Barbero
-  Pastelero
+<h1 class="logo">
+  <span class="E">E</span><span class="me">me</span><span class="R">R</span>
+  <span class="roles">( Productor · Dj · Barbero · Pastelero )</span>
+</h1>
   | Agencia Digital</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,7 +13,38 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+/* ===== TITULO FIESTA ===== */
+.roles{
+  display:block;
+  margin-top:18px;
+  font-size:20px;
+  font-weight:600;
+  letter-spacing:2px;
+  animation:fiesta 4s linear infinite;
+}
 
+@keyframes fiesta{
+  0%{
+    color:#ff005d;
+    text-shadow:0 0 10px #ff005d;
+  }
+  25%{
+    color:#00ffff;
+    text-shadow:0 0 12px #00ffff;
+  }
+  50%{
+    color:#39ff14;
+    text-shadow:0 0 14px #39ff14;
+  }
+  75%{
+    color:#ffd000;
+    text-shadow:0 0 14px #ffd000;
+  }
+  100%{
+    color:#ff005d;
+    text-shadow:0 0 10px #ff005d;
+  }
+}
 body{
   font-family:'Montserrat',sans-serif;
   color:#fff;
