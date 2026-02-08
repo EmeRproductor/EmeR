@@ -1,236 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EmeR</title>
-
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Segoe UI',sans-serif;
-}
-
-body{
-  background:black;
-  color:white;
-  overflow-x:hidden;
-}
-
-/* INTRO */
-#intro{
-  position:fixed;
-  inset:0;
-  background:black;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:999;
-  animation:introFade 4s forwards;
-}
-
-#intro h1{
-  font-size:120px;
-  color:#ff00ff;
-  text-shadow:0 0 40px #ff00ff;
-  animation:pulse 1.2s infinite;
-}
-
-@keyframes introFade{
-  0%{opacity:1}
-  80%{opacity:1}
-  100%{opacity:0;pointer-events:none}
-}
-
-/* VIDEO FONDO */
-video{
-  position:fixed;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:-5;
-}
-
-/* OVERLAY */
-.overlay{
-  position:fixed;
-  inset:0;
-  background:radial-gradient(circle at center, rgba(255,0,255,.3), rgba(0,0,0,.95));
-  z-index:-4;
-}
-
-/* HERO */
-.hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:30px;
-}
-
-/* TITULO */
-.title{
-  font-size:160px;
-  font-weight:900;
-  letter-spacing:12px;
-  color:#ff00ff;
-  text-shadow:
-    0 0 30px #ff00ff,
-    0 0 90px #ff00ff,
-    0 0 140px black;
-  animation:beat 1.4s infinite;
-}
-
-@keyframes beat{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.1)}
-}
-
-/* SUB */
-.roles{
-  margin-top:10px;
-  font-size:22px;
-  letter-spacing:4px;
-  animation:neon 3.5s infinite;
-}
-
-@keyframes neon{
-  0%{color:#ff00ff}
-  50%{color:#00ffee}
-  100%{color:#ff00ff}
-}
-
-/* SERVICIOS */
-.services{
-  margin-top:70px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:35px;
-  width:100%;
-  max-width:1200px;
-  perspective:1400px;
-}
-
-.service{
-  position:relative;
-  height:300px;
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:0 0 50px rgba(255,0,255,.7);
-  transform-style:preserve-3d;
-  transition:.4s;
-}
-
-.service:hover{
-  transform:rotateX(12deg) rotateY(-12deg) scale(1.08);
-}
-
-.service img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:.8;
-}
-
-.service .info{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(to top,rgba(0,0,0,.95),rgba(0,0,0,.2));
-  font-size:24px;
-  font-weight:900;
-  letter-spacing:2px;
-  text-shadow:0 0 25px #ff00ff;
-}
-
-/* CONTACTO */
-.contact{
-  margin-top:70px;
-  font-size:26px;
-}
-
-.contact a{
-  color:#00ffee;
-  text-decoration:none;
-  font-weight:900;
-  text-shadow:0 0 35px #00ffee;
-  animation:pulse 1.4s infinite;
-}
-
-@keyframes pulse{
-  0%{opacity:1}
-  50%{opacity:.6}
-  100%{opacity:1}
-}
-
-/* RESPONSIVE */
-@media(max-width:600px){
-  .title{font-size:90px}
-  .roles{font-size:14px}
-}
-</style>
+    <meta charset="UTF-8">
+    <title>EmeR | Productos inteligentes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #111;
+        }
+        header {
+            background: #000;
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .btn {
+            background: #fff;
+            color: #000;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .card img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            background: #000;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .dark {
+            background: #f5f5f5;
+        }
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- INTRO -->
-<div id="intro">
-  <h1>EmeR</h1>
-</div>
+<header>
+    <h1>EmeR</h1>
+    <p>Productos inteligentes que hacen tu vida más fácil</p>
+    <a href="#productos" class="btn">Comprar ahora</a>
+</header>
 
-<!-- VIDEO -->
-<video autoplay muted loop>
-  <source src="video.mp4" type="video/mp4">
-</video>
-
-<div class="overlay"></div>
-
-<section class="hero">
-
-  <div class="title">EmeR</div>
-
-  <div class="roles">
-    Productor · DJ · Barbero · Pastelero
-  </div>
-
-  <div class="services">
-
-    <div class="service">
-      <img src="flyer.jpg">
-      <div class="info">Flyers</div>
+<section id="productos">
+    <h2>🔥 Productos destacados</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://via.placeholder.com/300" alt="Producto">
+            <h3>Producto en tendencia</h3>
+            <p>Soluciona un problema real de forma simple y rápida.</p>
+            <strong>$XX.XXX CLP</strong><br>
+            <a href="#">Comprar</a>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300" alt="Producto">
+            <h3>Producto innovador</h3>
+            <p>Alta demanda y excelente relación precio/calidad.</p>
+            <strong>$XX.XXX CLP</strong><br>
+            <a href="#">Comprar</a>
+        </div>
     </div>
-
-    <div class="service">
-      <img src="video.jpg">
-      <div class="info">Videos Publicitarios</div>
-    </div>
-
-    <div class="service">
-      <img src="marketing.jpg">
-      <div class="info">Marketing Digital</div>
-    </div>
-
-    <div class="service">
-      <img src="branding.jpg">
-      <div class="info">Branding</div>
-    </div>
-
-  </div>
-
-  <div class="contact">
-    📲 <a href="https://wa.me/56982328639" target="_blank">
-      WhatsApp +56 9 8232 8639
-    </a>
-  </div>
-
 </section>
+
+<section class="dark">
+    <h2>🤍 Sobre EmeR</h2>
+    <p style="text-align:center; max-width:700px; margin:auto;">
+        EmeR es una marca personal enfocada en seleccionar productos útiles,
+        modernos y accesibles para todo Chile.  
+        No vendemos cualquier cosa: solo productos que valen la pena.
+    </p>
+</section>
+
+<section>
+    <h2>📦 ¿Cómo funciona?</h2>
+    <div class="grid">
+        <div class="card">1️⃣ Eliges tu producto</div>
+        <div class="card">2️⃣ Pagas de forma segura</div>
+        <div class="card">3️⃣ Procesamos tu pedido</div>
+        <div class="card">4️⃣ Lo recibes en tu casa</div>
+    </div>
+</section>
+
+<section class="dark">
+    <h2>🚚 Envíos a todo Chile</h2>
+    <p style="text-align:center;">
+        Tiempo estimado: <strong>7 a 15 días hábiles</strong><br>
+        Incluye número de seguimiento
+    </p>
+</section>
+
+<section>
+    <h2>🔒 Compra con confianza</h2>
+    <div class="grid">
+        <div class="card">✔ Pagos seguros</div>
+        <div class="card">✔ Garantía por fallas</div>
+        <div class="card">✔ Atención personalizada</div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 EmeR - Todos los derechos reservados</p>
+    <p>Instagram | WhatsApp | Correo</p>
+</footer>
 
 </body>
 </html>
