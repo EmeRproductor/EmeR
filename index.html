@@ -1,152 +1,166 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>EmeR | Productos inteligentes</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #ffffff;
-            color: #111;
-        }
-        header {
-            background: #000;
-            color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-        header p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-        .btn {
-            background: #fff;
-            color: #000;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-        section {
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        .card {
-            border: 1px solid #ddd;
-            padding: 20px;
-            text-align: center;
-            border-radius: 8px;
-        }
-        .card img {
-            width: 100%;
-            max-height: 200px;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
-        .card a {
-            display: inline-block;
-            margin-top: 10px;
-            background: #000;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .dark {
-            background: #f5f5f5;
-        }
-        footer {
-            background: #000;
-            color: #fff;
-            text-align: center;
-            padding: 30px 20px;
-        }
-    </style>
-</head>
-<body>
+==============================
+EMER – PACK COMPLETO COPIAR Y PEGAR
+==============================
 
-<header>
-    <h1>EmeR</h1>
-    <p>Productos inteligentes que hacen tu vida más fácil</p>
-    <a href="#productos" class="btn">Comprar ahora</a>
-</header>
+==============================
+1) PÁGINA INICIO – SHOPIFY
+==============================
 
-<section id="productos">
-    <h2>🔥 Productos destacados</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="https://via.placeholder.com/300" alt="Producto">
-            <h3>Producto en tendencia</h3>
-            <p>Soluciona un problema real de forma simple y rápida.</p>
-            <strong>$XX.XXX CLP</strong><br>
-            <a href="#">Comprar</a>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300" alt="Producto">
-            <h3>Producto innovador</h3>
-            <p>Alta demanda y excelente relación precio/calidad.</p>
-            <strong>$XX.XXX CLP</strong><br>
-            <a href="#">Comprar</a>
-        </div>
-    </div>
-</section>
+<style>
+.emer-header{background:#000;color:#fff;padding:80px 20px;text-align:center}
+.emer-header h1{font-size:48px;margin-bottom:10px}
+.emer-btn{background:#fff;color:#000;padding:15px 30px;text-decoration:none;font-weight:bold;border-radius:6px}
+.section{padding:60px 20px;max-width:1100px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
+.card{border:1px solid #ddd;padding:20px;text-align:center;border-radius:8px}
+.dark{background:#f5f5f5}
+</style>
 
-<section class="dark">
-    <h2>🤍 Sobre EmeR</h2>
-    <p style="text-align:center; max-width:700px; margin:auto;">
-        EmeR es una marca personal enfocada en seleccionar productos útiles,
-        modernos y accesibles para todo Chile.  
-        No vendemos cualquier cosa: solo productos que valen la pena.
-    </p>
-</section>
+<div class="emer-header">
+<h1>EmeR</h1>
+<p>Productos prácticos para el día a día</p>
+<a href="/collections/all" class="emer-btn">Comprar ahora</a>
+</div>
 
-<section>
-    <h2>📦 ¿Cómo funciona?</h2>
-    <div class="grid">
-        <div class="card">1️⃣ Eliges tu producto</div>
-        <div class="card">2️⃣ Pagas de forma segura</div>
-        <div class="card">3️⃣ Procesamos tu pedido</div>
-        <div class="card">4️⃣ Lo recibes en tu casa</div>
-    </div>
-</section>
+<div class="section">
+<h2 style="text-align:center;">Productos destacados</h2>
+<div class="grid">
+{% for product in collections.all.products limit:4 %}
+<div class="card">
+<img src="{{ product.featured_image | img_url: 'medium' }}">
+<h3>{{ product.title }}</h3>
+<p>{{ product.price | money }}</p>
+<a href="{{ product.url }}" class="emer-btn">Ver producto</a>
+</div>
+{% endfor %}
+</div>
+</div>
 
-<section class="dark">
-    <h2>🚚 Envíos a todo Chile</h2>
-    <p style="text-align:center;">
-        Tiempo estimado: <strong>7 a 15 días hábiles</strong><br>
-        Incluye número de seguimiento
-    </p>
-</section>
+<div class="section dark">
+<p style="text-align:center;max-width:700px;margin:auto;">
+EmeR selecciona productos funcionales, simples y útiles para personas que buscan soluciones prácticas sin complicaciones.
+</p>
+</div>
 
-<section>
-    <h2>🔒 Compra con confianza</h2>
-    <div class="grid">
-        <div class="card">✔ Pagos seguros</div>
-        <div class="card">✔ Garantía por fallas</div>
-        <div class="card">✔ Atención personalizada</div>
-    </div>
-</section>
+==============================
+2) PÁGINA DE PRODUCTO – SHOPIFY
+==============================
 
-<footer>
-    <p>© 2026 EmeR - Todos los derechos reservados</p>
-    <p>Instagram | WhatsApp | Correo</p>
-</footer>
+<style>
+.product{max-width:1100px;margin:auto;padding:40px 20px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.buy{background:#000;color:#fff;padding:18px;width:100%;font-size:18px;border:none;border-radius:8px}
+@media(max-width:768px){.grid{grid-template-columns:1fr}}
+</style>
 
-</body>
-</html>
+<div class="product">
+<div class="grid">
+<div><img src="{{ product.featured_image | img_url: 'large' }}"></div>
+<div>
+<h1>{{ product.title }}</h1>
+<h2>{{ product.price | money }}</h2>
+
+<form method="post" action="/cart/add">
+<input type="hidden" name="id" value="{{ product.variants.first.id }}">
+<button class="buy">COMPRAR AHORA</button>
+</form>
+
+<p>🚚 Envíos a todo Chile<br>⏱️ 7–15 días hábiles</p>
+</div>
+</div>
+
+<h3>Descripción</h3>
+{{ product.description }}
+
+<h3>Compra segura</h3>
+<p>✔ Pagos protegidos<br>✔ Garantía por fallas<br>✔ Atención personalizada</p>
+</div>
+
+==============================
+3) DESCRIPCIÓN DE PRODUCTO
+==============================
+
+<p><strong>Producto práctico para el uso diario</strong></p>
+
+<p>Diseñado para facilitar tareas cotidianas de forma simple y cómoda.
+Ideal para quienes buscan soluciones funcionales.</p>
+
+<ul>
+<li>✔ Fácil de usar</li>
+<li>✔ Diseño moderno</li>
+<li>✔ Uso diario</li>
+</ul>
+
+<p><strong>🚚 Envíos a todo Chile</strong><br>
+⏱️ 7 a 15 días hábiles<br>
+🔒 Compra segura</p>
+
+==============================
+4) COPY ANUNCIO META (SEGURO)
+==============================
+
+Producto práctico para el día a día.
+Diseñado para facilitar tareas cotidianas de forma simple y cómoda.
+
+✔ Fácil de usar
+✔ Diseño funcional
+✔ Ideal para el hogar
+
+🚚 Envíos a todo Chile
+🔒 Compra segura
+
+👉 Disponible hoy en EmeR
+
+==============================
+5) COPY CORTO (REELS / STORIES)
+==============================
+
+Solución práctica que muchas personas están usando.
+Simple, útil y sin complicaciones.
+
+👉 Disponible en EmeR
+
+==============================
+6) HOOKS PARA VIDEO
+==============================
+
+Esto hace el día a día mucho más fácil
+
+Solución simple que vale la pena conocer
+
+Producto práctico en tendencia
+
+==============================
+7) CTA
+==============================
+
+Comprar ahora
+Ver producto
+Disponible hoy
+
+==============================
+8) TEXTO POST-COMPRA
+==============================
+
+Gracias por tu compra en EmeR 🙌
+
+Tu pedido está siendo procesado.
+Recibirás tu número de seguimiento cuando sea despachado.
+
+🚚 Envíos a todo Chile
+⏱️ 7 a 15 días hábiles
+
+Equipo EmeR
+
+==============================
+9) BIO INSTAGRAM
+==============================
+
+🖤 EmeR
+Productos prácticos para el día a día
+🚚 Envíos a todo Chile
+🔗 Compra online
+
+==============================
+FIN
+==============================
