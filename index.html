@@ -1,108 +1,179 @@
-{
-  "site": {
-    "name": "Barbería Villa Alemana",
-    "type": "onepage",
-    "responsive": true,
-    "fonts": {
-      "heading": {
-        "family": "Playfair Display",
-        "weight": "700"
-      },
-      "body": {
-        "family": "Montserrat",
-        "weight": "400"
-      }
-    },
-    "colors": {
-      "primary": "#0D0D0D",
-      "secondary": "#C6A75E",
-      "background": "#000000",
-      "textLight": "#F5F5F5"
-    },
-    "animations": {
-      "scroll": "smooth",
-      "sectionFadeIn": true,
-      "buttonHover": "goldGlow",
-      "duration": "0.6s"
-    },
-    "layout": {
-      "maxWidth": "1200px",
-      "mobileBreakpoint": "768px",
-      "padding": "20px",
-      "buttonRadius": "30px"
-    },
-    "sections": [
-      {
-        "type": "hero",
-        "alignment": "center",
-        "backgroundColor": "#000000",
-        "title": "Tu mejor versión empieza con un buen corte.",
-        "subtitle": "Cortes, barbas y diseños personalizados en Villa Alemana. Aplicamos visajismo profesional para potenciar tu imagen.",
-        "buttons": [
-          {
-            "text": "Reservar por WhatsApp",
-            "link": "https://wa.me/569XXXXXXXX",
-            "style": "primary"
-          },
-          {
-            "text": "Cómo llegar",
-            "link": "https://maps.google.com/?q=Veteranas+del+79+1175+Villa+Alemana",
-            "style": "outline"
-          }
-        ]
-      },
-      {
-        "type": "about",
-        "title": "Especialistas en imagen masculina",
-        "content": "No hacemos cortes rápidos. Diseñamos estilos adaptados a tu rostro y personalidad utilizando técnicas de visajismo para lograr equilibrio, proporción y presencia.",
-        "backgroundColor": "#0D0D0D"
-      },
-      {
-        "type": "services",
-        "title": "Servicios",
-        "items": [
-          {
-            "name": "Corte Clásico & Moderno",
-            "description": "Adaptado a la forma de tu rostro."
-          },
-          {
-            "name": "Perfilado y Diseño de Barba",
-            "description": "Definición precisa y profesional."
-          },
-          {
-            "name": "Diseños y Detalles",
-            "description": "Cejas y acabados personalizados."
-          }
-        ],
-        "cta": {
-          "text": "Agendar ahora",
-          "link": "https://wa.me/569XXXXXXXX"
-        }
-      },
-      {
-        "type": "location",
-        "title": "Ubicación",
-        "address": "Veteranas del 79 #1175, Villa Alemana, Chile",
-        "mapLink": "https://maps.google.com/?q=Veteranas+del+79+1175+Villa+Alemana",
-        "contact": {
-          "whatsapp": "https://wa.me/569XXXXXXXX",
-          "email": "mailto:tuemail@gmail.com"
-        }
-      },
-      {
-        "type": "footer",
-        "text": "Barbería Villa Alemana · Tu imagen, nuestra especialidad."
-      }
-    ],
-    "seo": {
-      "title": "Barbería en Villa Alemana | Cortes y Barba Profesional",
-      "description": "Barbería profesional en Villa Alemana. Cortes personalizados, diseño de barba y visajismo masculino. Reserva por WhatsApp.",
-      "keywords": [
-        "barbería en Villa Alemana",
-        "corte de pelo Villa Alemana",
-        "barba profesional Villa Alemana",
-        "barbero Villa Alemana"
-      ]
-    }
-  }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbería Villa Alemana | Corte y Barba Profesional</title>
+<meta name="description" content="Barbería profesional en Villa Alemana. Cortes personalizados, diseño de barba y visajismo masculino. Reserva por WhatsApp.">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--black:#0D0D0D;
+--gold:#C6A75E;
+--white:#F5F5F5;
 }
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:var(--black);
+color:var(--white);
+line-height:1.6;
+}
+
+h1,h2,h3{
+font-family:'Playfair Display',serif;
+color:var(--gold);
+}
+
+section{
+padding:80px 20px;
+max-width:1200px;
+margin:auto;
+text-align:center;
+animation:fadeIn 1s ease-in-out;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:clamp(2rem,5vw,3.5rem);
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:600px;
+margin-bottom:30px;
+font-size:1.1rem;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 30px;
+border-radius:30px;
+text-decoration:none;
+font-weight:500;
+transition:0.4s ease;
+}
+
+.btn-primary{
+background:var(--gold);
+color:#000;
+}
+
+.btn-primary:hover{
+box-shadow:0 0 20px var(--gold);
+transform:scale(1.05);
+}
+
+.btn-outline{
+border:2px solid var(--gold);
+color:var(--gold);
+}
+
+.btn-outline:hover{
+background:var(--gold);
+color:#000;
+}
+
+.services div{
+margin:25px 0;
+}
+
+.location p{
+margin-bottom:20px;
+}
+
+footer{
+padding:30px;
+text-align:center;
+background:#000;
+color:var(--gold);
+font-size:0.9rem;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+@media(max-width:768px){
+section{
+padding:60px 15px;
+}
+}
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Tu mejor versión empieza con un buen corte.</h1>
+<p>Cortes, barbas y diseños personalizados en Villa Alemana. Aplicamos visajismo profesional para potenciar tu imagen.</p>
+
+<a href="https://wa.me/569XXXXXXXX" class="btn btn-primary">Reservar por WhatsApp</a>
+<a href="https://maps.google.com/?q=Veteranas+del+79+1175+Villa+Alemana" class="btn btn-outline">Cómo llegar</a>
+</section>
+
+<!-- SOBRE NOSOTROS -->
+<section>
+<h2>Especialistas en imagen masculina</h2>
+<p>No hacemos cortes rápidos. Diseñamos estilos adaptados a tu rostro y personalidad utilizando técnicas de visajismo para lograr equilibrio, proporción y presencia.</p>
+</section>
+
+<!-- SERVICIOS -->
+<section class="services">
+<h2>Servicios</h2>
+
+<div>
+<h3>Corte Clásico & Moderno</h3>
+<p>Adaptado a la forma de tu rostro.</p>
+</div>
+
+<div>
+<h3>Perfilado y Diseño de Barba</h3>
+<p>Definición precisa y profesional.</p>
+</div>
+
+<div>
+<h3>Diseños y Detalles</h3>
+<p>Cejas y acabados personalizados.</p>
+</div>
+
+<a href="https://wa.me/569XXXXXXXX" class="btn btn-primary">Agendar ahora</a>
+</section>
+
+<!-- UBICACIÓN -->
+<section class="location">
+<h2>Ubicación</h2>
+<p>Veteranas del 79 #1175<br>Villa Alemana, Chile</p>
+
+<a href="https://maps.google.com/?q=Veteranas+del+79+1175+Villa+Alemana" class="btn btn-outline">Ver en Google Maps</a>
+<a href="mailto:tuemail@gmail.com" class="btn btn-primary">Enviar correo</a>
+</section>
+
+<footer>
+Barbería Villa Alemana · Tu imagen, nuestra especialidad.
+</footer>
+
+</body>
+</html>
