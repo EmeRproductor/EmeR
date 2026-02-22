@@ -3,134 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Barbería Villa Alemana | Corte y Barba Profesional</title>
+<title>Emesté Studio & Academy | Barbería & Estética</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-:root{
---black:#0D0D0D;
---gold:#C6A75E;
---white:#F5F5F5;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
+background:#000;
+color:#fff;
 font-family:'Montserrat',sans-serif;
-background:var(--black);
-color:var(--white);
-overflow-x:hidden;
+line-height:1.6;
 }
 
 h1,h2,h3{
 font-family:'Playfair Display',serif;
-color:var(--gold);
+color:#D4AF37;
 }
 
 section{
-padding:80px 20px;
-max-width:1200px;
-margin:auto;
+padding:80px 10%;
 text-align:center;
 }
-
-/* HERO */
 
 .hero{
-position:relative;
-min-height:100vh;
+height:100vh;
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
-text-align:center;
-background-image:url('imagenes/fondo.jpg');
-background-size:cover;
-background-position:center;
-animation:zoomBg 20s ease-in-out infinite alternate;
+background:linear-gradient(to bottom,#000,#111);
 }
 
-@keyframes zoomBg{
-from{background-size:100%;}
-to{background-size:110%;}
-}
-
-.overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.9));
-}
-
-.hero-content{
-position:relative;
-z-index:2;
-max-width:800px;
-padding:20px;
-}
-
-.hero h1 span{
-opacity:0;
-display:inline-block;
-animation:fadeLetter 0.6s forwards;
-}
-
-@keyframes fadeLetter{
-to{opacity:1; transform:translateY(0);}
+.hero h1{
+font-size:3rem;
+letter-spacing:2px;
 }
 
 .hero p{
-margin:25px 0;
-font-size:1.1rem;
+max-width:600px;
+margin-top:20px;
+font-weight:300;
 }
 
 .btn{
 display:inline-block;
-margin:10px;
-padding:14px 30px;
-border-radius:30px;
+margin-top:30px;
+padding:12px 30px;
+border:1px solid #D4AF37;
+color:#D4AF37;
 text-decoration:none;
-font-weight:500;
-transition:0.4s ease;
+transition:0.3s;
 }
 
-.btn-primary{
-background:var(--gold);
+.btn:hover{
+background:#D4AF37;
 color:#000;
 }
 
-.btn-primary:hover{
-box-shadow:0 0 20px var(--gold);
-transform:scale(1.05);
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+margin-top:40px;
 }
 
-.btn-outline{
-border:2px solid var(--gold);
-color:var(--gold);
+.card{
+border:1px solid #222;
+padding:30px;
+transition:0.3s;
 }
 
-.btn-outline:hover{
-background:var(--gold);
-color:#000;
+.card:hover{
+border-color:#D4AF37;
 }
 
-/* PARTÍCULAS */
-
-canvas{
-position:absolute;
-top:0;
-left:0;
-z-index:1;
+ul{
+list-style:none;
+margin-top:20px;
 }
 
-/* GALERÍA */
+ul li{
+margin:10px 0;
+}
 
 .gallery{
 display:grid;
@@ -141,151 +97,117 @@ margin-top:40px;
 
 .gallery img{
 width:100%;
-border-radius:12px;
+height:250px;
+object-fit:cover;
+filter:grayscale(100%);
 transition:0.4s;
 }
 
 .gallery img:hover{
-transform:scale(1.05);
-}
-
-/* MAPA */
-
-.map-container{
-margin-top:40px;
-border-radius:15px;
-overflow:hidden;
+filter:grayscale(0%);
 }
 
 iframe{
 width:100%;
 height:350px;
 border:0;
+margin-top:40px;
 }
 
 footer{
-padding:30px;
-background:#000;
-color:var(--gold);
+padding:40px;
+text-align:center;
+background:#111;
+font-size:0.9rem;
 }
 
-@media(max-width:768px){
-.hero{
-background-attachment:scroll;
-}
-iframe{
-height:300px;
-}
+/* Botones flotantes */
+.whatsapp{
+position:fixed;
+right:20px;
+padding:12px 18px;
+background:#D4AF37;
+color:#000;
+text-decoration:none;
+font-weight:500;
+border-radius:30px;
 }
 
+.barber{
+bottom:80px;
+}
+
+.estetica{
+bottom:20px;
+}
 </style>
 </head>
+
 <body>
 
 <section class="hero">
-<div class="overlay"></div>
-<canvas id="particles"></canvas>
+<h1>Emesté Studio & Academy</h1>
+<h3>Barbería & Estética en un solo lugar</h3>
+<p>Transformamos tu imagen con amor, excelencia y profesionalismo. Un espacio donde la elegancia se combina con una experiencia cálida y cercana.</p>
+<a href="#servicios" class="btn">Descubrir Servicios</a>
+</section>
 
-<div class="hero-content">
-<h1 id="title"></h1>
-<p>Cortes, barbas y diseños personalizados en Villa Alemana. Visajismo profesional para potenciar tu imagen.</p>
+<section id="servicios">
+<h2>Servicios</h2>
 
-<a href="https://wa.me/569XXXXXXXX" class="btn btn-primary">Reservar por WhatsApp</a>
-<a href="#ubicacion" class="btn btn-outline">Cómo llegar</a>
+<div class="services">
+
+<div class="card">
+<h3>Barbería</h3>
+<ul>
+<li>Cortes de cabello</li>
+<li>Diseño de cejas</li>
+<li>Barba</li>
+<li>Diseño personalizado</li>
+<li>Limpieza facial masculina</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Estética</h3>
+<ul>
+<li>Ácido hialurónico</li>
+<li>Botox</li>
+<li>Limpiezas faciales</li>
+<li>Tratamientos faciales</li>
+<li>Estética integral hombre y mujer</li>
+</ul>
+</div>
+
 </div>
 </section>
 
 <section>
-<h2>Especialistas en imagen masculina</h2>
-<p>Diseñamos estilos adaptados a tu rostro y personalidad utilizando técnicas de visajismo para lograr equilibrio y presencia.</p>
-</section>
-
-<section>
-<h2>Servicios</h2>
-<h3>Corte Clásico & Moderno</h3>
-<p>Adaptado a la forma de tu rostro.</p>
-<h3>Perfilado y Diseño de Barba</h3>
-<p>Definición precisa y profesional.</p>
-<h3>Diseños y Detalles</h3>
-<p>Cejas y acabados personalizados.</p>
-<a href="https://wa.me/569XXXXXXXX" class="btn btn-primary">Agendar ahora</a>
+<h2>Nuestra Historia</h2>
+<p>Somos un matrimonio emprendedor apasionado por la belleza y el bienestar. Creamos Emesté Studio & Academy para ofrecer un servicio de excelencia donde cada cliente se sienta valorado, escuchado y transformado.</p>
 </section>
 
 <section>
 <h2>Galería</h2>
 <div class="gallery">
-<img src="imagenes/corte1.jpg">
-<img src="imagenes/barba1.jpg">
-<img src="imagenes/interior.jpg">
-<img src="imagenes/corte2.jpg">
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" />
+<img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70" />
+<img src="https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3" />
+<img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a" />
 </div>
 </section>
 
-<section id="ubicacion">
+<section>
 <h2>Ubicación</h2>
-<p>Veteranas del 79 #1175<br>Villa Alemana, Chile</p>
-
-<div class="map-container">
-<iframe src="https://www.google.com/maps?q=Veteranas+del+79+1175+Villa+Alemana&output=embed"></iframe>
-</div>
-
-<a href="https://maps.google.com/?q=Veteranas+del+79+1175+Villa+Alemana" class="btn btn-outline">Abrir en Google Maps</a>
-<a href="mailto:tuemail@gmail.com" class="btn btn-primary">Enviar correo</a>
+<iframe src="https://www.google.com/maps?q=Veteranos+del+79+1175+Villa+Alemana&output=embed"></iframe>
 </section>
 
 <footer>
-Barbería Villa Alemana · Tu imagen, nuestra especialidad.
+© 2026 Emesté Studio & Academy — Villa Alemana
 </footer>
 
-<script>
-
-/* ANIMACIÓN LETRA POR LETRA */
-
-const text="Tu mejor versión empieza con un buen corte.";
-const title=document.getElementById("title");
-
-text.split("").forEach((letter,i)=>{
-let span=document.createElement("span");
-span.textContent=letter;
-span.style.animationDelay=i*0.05+"s";
-title.appendChild(span);
-});
-
-/* PARTÍCULAS DORADAS */
-
-const canvas=document.getElementById("particles");
-const ctx=canvas.getContext("2d");
-
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-
-let particles=[];
-
-for(let i=0;i<50;i++){
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-radius:Math.random()*2,
-dx:(Math.random()-0.5),
-dy:(Math.random()-0.5)
-});
-}
-
-function animate(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-particles.forEach(p=>{
-ctx.beginPath();
-ctx.arc(p.x,p.y,p.radius,0,Math.PI*2);
-ctx.fillStyle="#C6A75E";
-ctx.fill();
-p.x+=p.dx;
-p.y+=p.dy;
-});
-requestAnimationFrame(animate);
-}
-animate();
-
-</script>
+<a href="https://wa.me/56982328639" class="whatsapp barber" target="_blank">Reservar Barbería</a>
+<a href="https://wa.me/56965119521" class="whatsapp estetica" target="_blank">Reservar Estética</a>
 
 </body>
 </html>
